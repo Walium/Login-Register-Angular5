@@ -15,7 +15,7 @@ export class PostComponent implements OnInit {
 
   update = new Promise(
     (resolve, reject)=>{
-      const date = new Date(2001, 3, 15);;
+      const date = new Date();
       setTimeout(
         ()=>{
           resolve(date);
