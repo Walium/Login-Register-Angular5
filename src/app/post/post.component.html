@@ -1,0 +1,16 @@
+<li [ngClass]="{'list-group-item':true,
+                'list-group-item-success':Status==='on',
+                'list-group-item-danger':Status==='off'
+                }">
+  <div style="width: 20px;height: 20px;background-color: red" *ngIf="Status === 'éteint' && Number>0" ></div>
+  <h4 [ngStyle]="{color:getColor()}" >Titre : {{ Title }} -- {{update | async | date : 'short' }}
+    <!-- -- Status {{ getStatus() }}--></h4>
+  <br>
+  <h4 [ngStyle]="{color:getColor()}">{{ getPost() }}</h4>
+  <p> --a {{ Number }} Like</p>
+  <!--<input type="text" class="form-control" [(ngModel)]="appareilName">-->
+  <button class="btn btn-success" [disabled]="isAuth"
+          (click)="like()" >J'aime</button>
+  <button class="btn btn-danger" [disabled]="isAuth"
+          (click)="unlike()">Je n'aime pas</button>
+</li>
