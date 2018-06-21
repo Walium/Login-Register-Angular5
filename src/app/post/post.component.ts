@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  @Input() appareilName :string;
+  @Input() postName :string;
   @Input() Status : string;
   @Input() Post : string;
   @Input() Title : string;

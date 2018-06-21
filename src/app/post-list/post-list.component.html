@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Vos posts</h2>
+    <!--le blog
+    <li [ngClass]="{'list-group-item':true,
+                'list-group-item-success':Status==='on',
+                'list-group-item-danger':Status==='off'
+                }">
+      <div style="width: 20px;height: 20px;background-color: red"
+           *ngIf="Status === 'éteint' && Number>0" ></div>
+
+      <p style="text-align: right">{{update | async | date:'short' }}</p>
+
+      <h4 [ngStyle]="{color:getColor()}" >{{ Title }} </h4>
+
+
+      <br>
+      <h4 [ngStyle]="{color:getColor()}">{{ getPost() }}</h4>
+
+      <p> Nombre de "Like" ({{ Number }} Like)</p>
+
+      <!--<input type="text" class="form-control" [(ngModel)]="appareilName"> -->
+     <!-- <button class="btn btn-success" [disabled]="isAuth"
+              (click)="like()" >J'aime</button>
+
+
+      <button class="btn btn-danger" [disabled]="isAuth"
+              (click)="unlike()">Je n'aime pas</button>
+    </li>
+
+    -->
+    <div class="list-group">
+      <button
+        class="list-group-item"
+        *ngFor="let post of posts; let i = index"
+        (click)="onViewPost(i)">
+        <h3 class="list-group-item-heading">
+          {{ post.title }}
+          <button class="btn btn-default pull-right" (click)="onDeletePost(post)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+          <button class="btn btn-success" [disabled]="isAuth"
+                  (click)="like()" >J'aime</button>
+        </h3>
+        <p class="list-group-item-text">{{ post.author }}</p>
+      </button>
+    </div>
+    <button class="btn btn-primary" (click)="onNewPost()">Nouveau post</button>
+  </div>
+</div>

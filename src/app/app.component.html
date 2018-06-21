@@ -1,18 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Mon blog :)</h2>
-      <p>Mis a jour : {{lastUpdate | async | date | uppercase}}</p>
-      <ul class="list-group">
-        <app-post *ngFor="let appareil of appareils"
-                  [Title]="appareil.title"
-                  [appareilName]="appareil.name"
-                  [Status]="appareil.status"
-                  [Post]="appareil.post"
-                  [Number]="appareil.number"
-        ></app-post>
-      </ul>
 
+<app-header></app-header>
+<div class="container">
+
+  <!--
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Ancienne publication</h2>
+        <p>Mis a jour : {{lastUpdate | async | date | uppercase}}</p>
+        <ul class="list-group">
+          <app-post *ngFor="let post of posts"
+                    [Title]="post.title"
+                    [postName]="post.name"
+                    [Status]="post.status"
+                    [Post]="post.post"
+                    [Number]="post.number"
+          ></app-post>
+        </ul>
+
+      </div>
     </div>
   </div>
+-->
+  <router-outlet></router-outlet>
 </div>
+
